@@ -1,111 +1,289 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="ETP Test Project - page 1">
-	<meta name="robots" content="noindex, nofollow">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Premier Event Technology</title>
-	<link href="style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">	
+    <meta charset="utf-8">
+    <meta name="description" content="Brandon Salazar's Portfolio Website">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brandon Salazar's Portfolio Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #000080 0%, #000080 50%, #000000 100%); /* Navy blue to black transition */
+            color: #ffffff; /* White text */
+            min-height: 200vh; /* Double the height of the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2em;
+            overflow: auto; /* Ensuring scrolling works */
+            transition: background-color 0.5s;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            margin-bottom: 2em;
+            width: 100%;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3em;
+            margin: 0.5em 0;
+            color: #ffffff; /* White text */
+        }
+        .hero-text p {
+            font-size: 1.2em;
+            margin: 0.5em 0 1.5em;
+            color: #ffffff; /* White text */
+        }
+        .links, .resume-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin: 1em 0;
+        }
+        .links a, .resume-links a {
+            text-decoration: none;
+            color: #ffffff; /* White text */
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            background-color: #000080; /* Navy blue background */
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .links a:hover, .resume-links a:hover {
+            background-color: #ffffff;
+            color: #000080; /* Navy blue text on hover */
+        }
+        .image-section {
+            width: 150px;
+            height: 200px;
+            border-radius: 50% / 60%;
+            overflow: hidden;
+            border: 5px solid #ffffff; /* White border */
+            background-color: #000080; /* Navy blue background in case image doesn't load */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 2em;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about, .resume-section {
+            width: 100%;
+            margin-top: 2em;
+            padding: 2em;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* To position the grey bubble inside */
+        }
+        .about h2, .resume-section h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #000000; /* Black text */
+        }
+        .about p, .resume-section ul li {
+            color: #000000; /* Black text */
+        }
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+        .about p {
+            font-size: 1.2em;
+        }
+        .resume-section h3 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .resume-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resume-section ul li {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .intro-text {
+            margin-top: 2em;
+            color: #ffffff; /* White text */
+        }
+        .intro-text h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .intro-text p {
+            font-size: 1.2em;
+        }
+        .resume-section .smaller-bubble {
+            position: relative;
+            background-color: #B3B4BD; /* Light grey */
+            border-radius: 10px;
+            padding: 1em; /* Adjusted padding to make bubble smaller */
+            margin: -1em; /* Adjusted margin to keep bubble within bounds */
+        }
+        .resume-section .smaller-bubble h4 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .resume-links a {
+            margin: 0 0.5em;
+        }
+        .resume-section .view-more-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #000080; /* Navy blue background */
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            margin-top: 1em;
+            transition: background-color 0.3s;
+        }
+        .resume-section .view-more-btn:hover {
+            background-color: #0a1f2e;
+        }
+        .resume-section .view-more-btn i {
+            margin-right: 0.5em;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.resume-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-<div class="hero-image-home">
-	<div class="logo">
-		<a href="/premier/index.html"><img src="premier-logo.png" alt="Premier Event Technology Logo"/></a>
-	</div>
-	<label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
-	<input type="checkbox" id="toggle-1">
-  	<nav>
-		<ul>
-			<!-- Edit Menu Links  -->
-			<li><a href="/premier/about-us.html">About</a></li>
-			<li><a href="#">Our Work</a></li>
-			<li><a href="#">Our Team</a></li>
-			<li><a href="#">Careers</a></li>
-			<li><a href="#">Contact Us</a></li>
-			<!-- END Menu Links -->
-		</ul>
-	</nav>
-		
-	<!-- Edit Banner Text -->
-	<div class="hero-text">
-		<h1>A full-service live event</h1>
-		<p class="hero-subtitle">Premier Event Technology</p>
-	</div>
-	<!-- END Banner Text -->
-	</div>
-	<main>
-		<article class="main">
-			<section class="content">
-				<!-- Edit Homepage Text -->
-				<p class="blue-text">WE are <strong>Premier</strong></p>
-				<p id="text">We specialized in the full-service support of live events through a broad scope of offerings to our clients. Using a turn-key approach, we translate your vision into reality. From concept to execution, we do it all.</p>
-				<!-- END Homepage Text -->
-			</section>
-			<div id="imageGrid">
-			  <section class="grid">
-				<div class="grid-group">
-					<!-- Edit Homepage Image 1 -->
-				  	<div class="grid-group-image"><img src="ScenicDesign.png" alt="Scenic design" /></div>
-				  	<span class="blue">Scenic Design</span> <br>
-					NSM
-					<!-- END Homepage Image 1 -->
-				</div>
-				<div class="grid-group">
-					<!-- Edit Homepage Image 2 -->
-				  	<div class="grid-group-image"><img src="Lighting.png" alt="Lighting" /></div>
-				  	<span class="blue">Lighting</span> <br>
-					ACM
-					<!-- END Homepage Image 2 -->
-				</div>
-				<div class="grid-group">
-					<!-- Edit Homepage Image 3 -->
-				  	<div class="grid-group-image"><img src="LED.png" alt="LED" /></div>
-				  	<span class="blue">LED</span> <br>
-					Befefit
-					<!-- END Homepage Image 3 -->
-				</div>
-				<div class="grid-group">
-					<!-- Edit Homepage Image 4 -->
-				  	<div class="grid-group-image"><img src="Lighting2.png" alt="Lighting" /></div>
-				  	<span class="blue">Lighting</span> <br>
-					ACM
-					<!-- END Homepage Image 4 -->
-				</div>
-			  </section>
-			</div>
-		</article>
-	</main>
-	<footer class="footerRow">
-		<div class="footerColumn">
-			<span id="SocialMedia">
-				<a href="https://www.facebook.com/premiereventtechnology?fref=ts" target="_blank" class="fab fa-facebook-f"></a>
-				<a href="https://twitter.com/PremierEventAV" target="_blank" class="fab fa-twitter"></a>
-				<a href="https://www.linkedin.com/company/premier-creative-gorup/?trk=prof-following-company-logo" target="_blank" class="fab fa-linkedin-in"></a>
-			</span>
-		</div>
-		<div class="footerColumn">
-				<ol id="Copyright">
-					<!-- Edit Footer Links -->
-					<li class="footerMenu"><a href="#" class="blueLink">Terms of Use</a></li>
-					<li class="footerMenu"><a href="#" class="blueLink">Privacy Policy</a></li>
-					<!-- END Footer Links -->
-				</ol>
-		</div>
-	</footer>
-	<script>
-		function myFunction() {
-			  var x = document.getElementById("myTopnav");
-			  if (x.className === "menu") {
-				x.className += " responsive";
-			  } else {
-				x.className = "menu";
-			  }
-		} 
-	</script>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Brandon Salazar's<br>Portfolio Website</h1>
+                <p>Welcome to my portfolio site. Explore my projects and connect with me!</p>
+            </div>
+            <div class="image-section">
+                <img src="C:\Users\Brandon\Pictures\brandon finsihed photos\DSC01393.jpg" alt="Brandon Salazar">
+            </div>
+        </div>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/brandonasalazar/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://letterboxd.com/bsalazar_/" target="_blank" class="letterboxd">
+                <i class="fas fa-camera"></i> Letterboxd
+            </a>
+            <a href="https://github.com/peruvianpapi23" target="_blank" class="github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        <div class="resume-links">
+            <a href="#sensorium-avr"><i class="fas fa-home"></i> Sensorium AVR</a>
+            <a href="#headstarter-ai"><i class="fas fa-robot"></i> Headstarter AI</a>
+            <a href="#green-key-resources"><i class="fas fa-key"></i> Green Key Resources</a>
+            <a href="#montclair-state"><i class="fas fa-school"></i> Montclair State</a>
+            <a href="#best-buy"><i class="fas fa-store"></i> Best Buy</a>
+        </div>
+        <div class="about">
+            <div class="smaller-bubble">
+                <h2>About Me</h2>
+                <p>I am a dedicated professional in Information Technology with a passion for software engineering and data analysis. My journey has led me through various roles where I've developed skills in software development, system administration, and technical support. Beyond my professional life, I have a genuine passion for cinema, Brazilian Jiu-Jitsu, working out, and reading. I am deeply interested in learning about technology and how it intersects with our daily lives, always eager to explore new advancements and innovations.</p>
+            </div>
+        </div>
+        <div class="resume-section" id="headstarter-ai">
+            <div class="smaller-bubble">
+                <h4>Headstarter AI</h4>
+                <ul>
+                    <li>Software Engineer Fellow</li>
+                    <li>Successfully completed multiple coding projects, showcasing proficiency in various programming languages.</li>
+                    <li>Practical experience in AI and machine learning applications.</li>
+                    <li>Completed a 7-week intensive software engineering fellowship.</li>
+                    <li>Built 5 AI Projects using OpenAI, NextJS, Firebase, HTML, AWS and other SaaS/PaaS.</li>
+                    <li>Participated in 5 Hackathons, 3 virtually and 2 in person with peers.</li>
+                    <li>Engaged in comprehensive feedback from experienced and well-placed industry SWEs.</li>
+                    <li>Projects Included: Achieve 1,000 people on waitlist, built a solution for a startup’s backlog meeting business requirements, contributed accepted pull requests to an open-source community.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-section" id="sensorium-avr">
+            <div class="smaller-bubble">
+                <h4>Sensorium AVR</h4>
+                <ul>
+                    <li>Assistant Administrator</li>
+                    <li>Managed IT infrastructure</li>
+                    <li>Implemented system upgrades</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-section" id="green-key-resources">
+            <div class="smaller-bubble">
+                <h4>Green Key Resources</h4>
+                <ul>
+                    <li>Data Analyst</li>
+                    <li>Conducted data analysis for client reports</li>
+                    <li>Developed dashboards and visualizations</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-section" id="montclair-state">
+            <div class="smaller-bubble">
+                <h4>Montclair State University</h4>
+                <ul>
+                    <li>Student Intern</li>
+                    <li>Assisted with system maintenance</li>
+                    <li>Provided technical support to students and staff</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-section" id="best-buy">
+            <div class="smaller-bubble">
+                <h4>Best Buy</h4>
+                <ul>
+                    <li>Geek Squad Agent</li>
+                    <li>Troubleshot and repaired electronics</li>
+                    <li>Provided excellent customer service</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
