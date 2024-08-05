@@ -63,6 +63,20 @@
             background: orange;
         }
 
+        .sidebar-close {
+            display: block;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            background: #444;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-close:hover {
+            background: orange;
+        }
+
         .section {
             padding: 60px 20px;
             text-align: center;
@@ -75,7 +89,7 @@
         }
 
         #shop {
-            background: #dcdcdc;
+            background: #a9a9a9;
             transition: background 0.5s ease;
         }
 
@@ -86,7 +100,7 @@
         }
 
         #contact {
-            background: #dcdcdc;
+            background: #a9a9a9;
             transition: background 0.5s ease;
         }
 
@@ -116,7 +130,7 @@
         }
 
         .product:hover {
-            transform: scale(1.15);
+            transform: scale(1.2);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -152,6 +166,11 @@
             background: black;
             color: white;
         }
+
+        .footer-info {
+            margin-top: 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -165,6 +184,7 @@
         <a href="#shop">Shop</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <div class="sidebar-close" onclick="toggleSidebar()">Close</div>
     </div>
 
     <section id="home" class="section">
@@ -225,6 +245,15 @@
 
     <footer>
         <p>&copy; 2024 The Loop. All rights reserved.</p>
+        <div class="footer-info">
+            <p>Sneakers • Streetwear • Designer</p>
+            <p>Buy • Sell • Trade</p>
+            <p>WE BUY DAILY!</p>
+            <p>Tue-Sat: 12-7PM</p>
+            <p>Sun & Mon: 12-5PM</p>
+            <p>WE SHIP WORLDWIDE 🌎✈️</p>
+            <p>280 Newark Ave, Jersey City, New Jersey 07302</p>
+        </div>
     </footer>
 
     <script>
