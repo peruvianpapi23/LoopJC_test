@@ -14,6 +14,7 @@
 
         body {
             font-family: Arial, sans-serif;
+            background-color: #a9a9a9;
         }
 
         header {
@@ -49,6 +50,7 @@
             padding-top: 60px;
             transform: translateX(250px);
             transition: transform 0.3s ease;
+            z-index: 1000;
         }
 
         .sidebar a {
@@ -109,6 +111,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            margin-top: 20px;
         }
 
         .product {
@@ -130,7 +133,7 @@
         }
 
         .product:hover {
-            transform: scale(1.2);
+            transform: scale(1.3);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -171,12 +174,18 @@
             margin-top: 20px;
             font-size: 14px;
         }
+
+        .location-image {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
     </style>
 </head>
-<body>
+<body onclick="closeSidebarOnClick(event)">
     <header>
         <div class="logo">The Loop</div>
-        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <button class="menu-button" onclick="toggleSidebar(event)">☰</button>
     </header>
 
     <div class="sidebar" id="sidebar">
@@ -184,7 +193,8 @@
         <a href="#shop">Shop</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <div class="sidebar-close" onclick="toggleSidebar()">Close</div>
+        <a href="https://www.instagram.com/theloopjc/?hl=en" target="_blank">Instagram</a>
+        <div class="sidebar-close" onclick="toggleSidebar(event)">Close</div>
     </div>
 
     <section id="home" class="section">
@@ -243,6 +253,8 @@
         </form>
     </section>
 
+    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image" class="location-image">
+
     <footer>
         <p>&copy; 2024 The Loop. All rights reserved.</p>
         <div class="footer-info">
@@ -257,12 +269,20 @@
     </footer>
 
     <script>
-        function toggleSidebar() {
+        function toggleSidebar(event) {
+            event.stopPropagation();
             var sidebar = document.getElementById('sidebar');
             if (sidebar.style.transform === 'translateX(0px)') {
                 sidebar.style.transform = 'translateX(250px)';
             } else {
                 sidebar.style.transform = 'translateX(0px)';
+            }
+        }
+
+        function closeSidebarOnClick(event) {
+            var sidebar = document.getElementById('sidebar');
+            if (event.target !== sidebar && !sidebar.contains(event.target)) {
+                sidebar.style.transform = 'translateX(250px)';
             }
         }
     </script>
