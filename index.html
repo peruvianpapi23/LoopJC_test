@@ -14,7 +14,6 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #a9a9a9;
             overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
@@ -28,11 +27,6 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-        }
-
-        .logo {
-            margin: 0;
-            padding: 0;
         }
 
         .logo img {
@@ -89,7 +83,7 @@
         }
 
         .section {
-            padding: 60px 20px;
+            padding: 100px 20px 60px; /* Adjusted for header */
             text-align: center;
             max-width: 1200px;
             margin: auto;
@@ -102,18 +96,20 @@
         }
 
         #shop {
-            background: #a9a9a9;
-            transition: background 0.5s ease;
-        }
-
-        #about {
             background: linear-gradient(90deg, black 0%, rgba(0, 0, 255, 0.5) 50%, orange 100%);
             color: white;
             transition: background 0.5s ease;
         }
 
+        #about {
+            background: linear-gradient(90deg, blue 0%, rgba(0, 0, 0, 0.5) 50%, orange 100%);
+            color: white;
+            transition: background 0.5s ease;
+        }
+
         #contact {
-            background: #a9a9a9;
+            background: linear-gradient(90deg, black 0%, rgba(0, 0, 255, 0.5) 50%, orange 100%);
+            color: white;
             transition: background 0.5s ease;
         }
 
@@ -131,6 +127,7 @@
             width: calc(33.333% - 40px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
+            color: black;
         }
 
         .product img {
@@ -191,6 +188,7 @@
             max-width: 800px; /* Adjust as needed */
             height: auto;
             margin: 20px auto;
+            display: block;
         }
     </style>
 </head>
