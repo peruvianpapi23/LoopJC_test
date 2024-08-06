@@ -22,7 +22,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background: linear-gradient(90deg, blue 0%, rgba(0, 0, 0, 0.5) 50%, orange 100%);
+            background: grey; /* Change to grey */
             position: fixed;
             width: 100%;
             top: 0;
@@ -32,9 +32,8 @@
         .logo img {
             width: 150px; /* Adjust size as needed */
             height: auto;
-            position: fixed;
-            top: 20px;
-            left: 20px;
+            display: block;
+            margin: 0 auto;
         }
 
         .menu-button {
@@ -95,27 +94,13 @@
         }
 
         #home {
-            background: linear-gradient(90deg, blue 0%, rgba(0, 0, 0, 0.5) 50%, orange 100%);
+            background: linear-gradient(orange, blue, black); /* Seamless background transition */
             color: white;
-            transition: background 0.5s ease;
         }
 
-        #shop {
-            background: linear-gradient(90deg, black 0%, rgba(0, 0, 255, 0.5) 50%, orange 100%);
-            color: white;
-            transition: background 0.5s ease;
-        }
-
-        #about {
-            background: linear-gradient(90deg, blue 0%, rgba(0, 0, 0, 0.5) 50%, orange 100%);
-            color: white;
-            transition: background 0.5s ease;
-        }
-
-        #contact {
-            background: linear-gradient(90deg, black 0%, rgba(0, 0, 255, 0.5) 50%, orange 100%);
-            color: white;
-            transition: background 0.5s ease;
+        #shop, #about, #contact {
+            background: grey;
+            color: black;
         }
 
         .products {
@@ -146,7 +131,7 @@
         }
 
         .product:hover {
-            transform: scale(1.3);
+            transform: scale(1.1);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
