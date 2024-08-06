@@ -15,7 +15,7 @@
         body {
             font-family: Arial, sans-serif;
             overflow-x: hidden; /* Prevent horizontal scroll */
-            background: linear-gradient(to bottom, orange, blue, black); /* Seamless background transition */
+            background: linear-gradient(to right, black, blue, orange); /* Horizontal gradient background */
             background-attachment: fixed; /* Ensure the background stays fixed while scrolling */
         }
 
@@ -279,9 +279,6 @@
         }
 
         function closeSidebarOnClick(event) {
-            var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.transform === 'translate
-       function closeSidebarOnClick(event) {
             var sidebar = document.getElementById('sidebar');
             if (sidebar.style.transform === 'translateX(0px)' && event.target !== sidebar && !sidebar.contains(event.target) && event.target !== document.querySelector('.menu-button')) {
                 sidebar.style.transform = 'translateX(250px)';
