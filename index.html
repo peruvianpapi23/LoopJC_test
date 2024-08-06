@@ -31,21 +31,15 @@
             z-index: 1000;
         }
 
-        .logo img {
-            width: 150px; /* Adjust size as needed */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
         .menu-button {
             font-size: 18px;
-            color: grey; /* Sidebar button color grey */
+            color: white; /* Sidebar button color white */
             background: none;
             border: none;
             cursor: pointer;
             position: fixed;
             right: 20px;
+            z-index: 1001; /* Ensure button is above sidebar */
         }
 
         .sidebar {
@@ -66,7 +60,7 @@
             display: block;
             padding: 10px 20px;
             text-decoration: none;
-            color: white;
+            color: white; /* Sidebar link color white */
             transition: background 0.3s ease;
         }
 
@@ -101,7 +95,7 @@
 
         #shop, #about, #contact {
             background: grey;
-            color: black;
+            color: white; /* Section text color white */
             max-width: 800px;
             margin: 0 auto 40px; /* Center sections with margin */
             border-radius: 10px; /* Optional: Add some border-radius for better look */
@@ -189,9 +183,7 @@
 </head>
 <body onclick="closeSidebarOnClick(event)">
     <header>
-        <div class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDkF-T_d6BdXKwqaHsMll2n7f2nAJY8zg-w&s" alt="The Loop Logo">
-        </div>
+        <!-- Removed logo image -->
         <button class="menu-button" onclick="toggleSidebar(event)">☰</button>
     </header>
 
@@ -288,7 +280,10 @@
 
         function closeSidebarOnClick(event) {
             var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.transform === 'translateX(0px)' && event.target !== sidebar && !sidebar.contains(event.target)) {
+            if (sidebar.style.transform === 'translate
+       function closeSidebarOnClick(event) {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.transform === 'translateX(0px)' && event.target !== sidebar && !sidebar.contains(event.target) && event.target !== document.querySelector('.menu-button')) {
                 sidebar.style.transform = 'translateX(250px)';
             }
         }
