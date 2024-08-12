@@ -31,55 +31,23 @@
             z-index: 1000;
         }
 
-        .menu-button {
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a, .nav-links button {
+            color: white;
+            text-decoration: none;
             font-size: 18px;
-            color: white; /* Sidebar button color white */
             background: none;
             border: none;
             cursor: pointer;
-            position: fixed;
-            right: 20px;
-            z-index: 1001; /* Ensure button is above sidebar */
+            transition: color 0.3s ease;
         }
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 250px;
-            height: 100%;
-            background: grey;
-            color: white;
-            padding-top: 60px;
-            transform: translateX(250px);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white; /* Sidebar link color white */
-            transition: background 0.3s ease;
-        }
-
-        .sidebar a:hover {
-            background: orange;
-        }
-
-        .sidebar-close {
-            display: block;
-            padding: 10px 20px;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            background: #444;
-            transition: background 0.3s ease;
-        }
-
-        .sidebar-close:hover {
-            background: orange;
+        .nav-links a:hover, .nav-links button:hover {
+            color: orange;
         }
 
         .section {
@@ -181,20 +149,18 @@
         }
     </style>
 </head>
-<body onclick="closeSidebarOnClick(event)">
+<body>
     <header>
-        <!-- Removed logo image -->
-        <button class="menu-button" onclick="toggleSidebar(event)">☰</button>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="https://www.instagram.com/theloopjc/?hl=en" target="_blank">Instagram</a>
+            <button onclick="alert('Location: 280 Newark Ave, Jersey City, NJ 07302\nHours: Tue-Sat: 12-7PM, Sun & Mon: 12-5PM')">Location & Hours</button>
+            <button onclick="alert('Contact us to sell your items!')">Sell</button>
+        </div>
     </header>
-
-    <div class="sidebar" id="sidebar">
-        <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://www.instagram.com/theloopjc/?hl=en" target="_blank">Instagram</a>
-        <div class="sidebar-close" onclick="toggleSidebar(event)">Close</div>
-    </div>
 
     <section id="home" class="section">
         <h1>Welcome to The Loop</h1>
@@ -266,24 +232,5 @@
             <p>280 Newark Ave, Jersey City, New Jersey 07302</p>
         </div>
     </footer>
-
-    <script>
-        function toggleSidebar(event) {
-            event.stopPropagation();
-            var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.transform === 'translateX(0px)') {
-                sidebar.style.transform = 'translateX(250px)';
-            } else {
-                sidebar.style.transform = 'translateX(0px)';
-            }
-        }
-
-        function closeSidebarOnClick(event) {
-            var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.transform === 'translateX(0px)' && event.target !== sidebar && !sidebar.contains(event.target) && event.target !== document.querySelector('.menu-button')) {
-                sidebar.style.transform = 'translateX(250px)';
-            }
-        }
-    </script>
 </body>
 </html>
