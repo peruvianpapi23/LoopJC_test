@@ -116,6 +116,15 @@
             margin-top: 20px;
         }
 
+        #home img {
+            width: 100%;
+            max-width: 800px; /* Maximum width of the image */
+            height: auto;
+            margin: 40px auto; /* Center the image */
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+        }
+
         #shop, #about, #contact {
             background: grey;
             color: white; /* Section text color white */
@@ -158,18 +167,23 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        .location-image {
+        .location-carousel {
+            position: relative;
             width: 100%;
-            max-width: 800px; /* Adjust as needed */
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+            max-width: 800px;
+            margin: 40px auto; /* Center the carousel */
+            overflow: hidden;
         }
 
-        .location-image:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         form {
@@ -263,39 +277,45 @@
         <section id="home" class="section">
             <h1>Welcome to The Loop</h1>
             <p>Your one-stop shop for fashion reselling.</p>
-            <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image" class="location-image">
+            <div class="location-carousel">
+                <div class="carousel-images">
+                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 1">
+                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 2">
+                    <!-- Add more images if needed -->
+                </div>
+            </div>
         </section>
 
         <section id="shop" class="section">
             <h2>Shop</h2>
             <div class="products">
                 <div class="product">
-                    <img src="product1.jpg" alt="Red leather sneaker">
+                    <img src="product1.jpg" alt="Product 1">
                     <h3>Product 1</h3>
                     <p>$25.00</p>
                 </div>
                 <div class="product">
-                    <img src="product2.jpg" alt="Blue hoodie">
+                    <img src="product2.jpg" alt="Product 2">
                     <h3>Product 2</h3>
                     <p>$35.00</p>
                 </div>
                 <div class="product">
-                    <img src="product3.jpg" alt="Green hat">
+                    <img src="product3.jpg" alt="Product 3">
                     <h3>Product 3</h3>
                     <p>$45.00</p>
                 </div>
                 <div class="product">
-                    <img src="product4.jpg" alt="Black jeans">
+                    <img src="product4.jpg" alt="Product 4">
                     <h3>Product 4</h3>
                     <p>$55.00</p>
                 </div>
                 <div class="product">
-                    <img src="product5.jpg" alt="White sneakers">
+                    <img src="product5.jpg" alt="Product 5">
                     <h3>Product 5</h3>
                     <p>$65.00</p>
                 </div>
                 <div class="product">
-                    <img src="product6.jpg" alt="Designer jacket">
+                    <img src="product6.jpg" alt="Product 6">
                     <h3>Product 6</h3>
                     <p>$75.00</p>
                 </div>
@@ -333,5 +353,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        let index = 0;
+
+        function showNextImage() {
+            index++;
+            if (index >= carouselImages.children.length) {
+                index = 0;
+            }
+            carouselImages.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
 </body>
 </html>
