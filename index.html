@@ -122,18 +122,20 @@
             max-width: 800px;
             margin: 40px auto; /* Center the carousel */
             overflow: hidden;
+            height: 500px; /* Increased height for better display */
         }
 
         .carousel-images {
             display: flex;
+            width: 100%;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
         }
 
         .carousel-images img {
             width: 100%;
-            height: 400px; /* Adjusted height for consistency */
+            height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         #shop, #about, #contact {
@@ -351,17 +353,15 @@
 
     <script>
         const carouselImages = document.querySelector('.carousel-images');
+        const images = carouselImages.children;
         let index = 0;
 
         function showNextImage() {
-            index++;
-            if (index >= carouselImages.children.length) {
-                index = 0;
-            }
+            index = (index + 1) % images.length;
             carouselImages.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        setInterval(showNextImage, 3000); // Change image every 3 seconds
+        setInterval(showNextImage, 5000); // Change image every 5 seconds
     </script>
 </body>
 </html>
