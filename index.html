@@ -26,7 +26,7 @@
 
         header {
             display: flex;
-            justify-content: space-between; /* Space between logo/search and nav links */
+            flex-direction: column;
             align-items: center;
             padding: 10px 20px; /* Adjusted padding */
             background: black; /* Header background color black */
@@ -34,7 +34,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 100px; /* Adjusted header height for smaller logo */
+            height: auto; /* Adjusted for responsive design */
         }
 
         .logo {
@@ -43,8 +43,10 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
             align-items: center; /* Center align nav items vertically */
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .nav-links a, .nav-links button {
@@ -65,7 +67,7 @@
         .search-bar {
             display: flex;
             align-items: center;
-            margin-left: 20px;
+            margin-top: 10px;
         }
 
         .search-bar input[type="text"] {
@@ -73,7 +75,7 @@
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
             outline: none;
-            width: 200px;
+            width: 150px;
             transition: border-color 0.3s ease;
         }
 
@@ -97,7 +99,7 @@
         }
 
         .section {
-            padding: 180px 20px 60px; /* Adjusted for taller header */
+            padding: 120px 20px 60px; /* Adjusted for mobile */
             text-align: center;
             max-width: 1200px;
             margin: auto;
@@ -108,11 +110,11 @@
         }
 
         #home h1 {
-            font-size: 64px; /* Doubled font size for "Welcome to The Loop" */
+            font-size: 48px; /* Adjusted font size for mobile */
         }
 
         #home p {
-            font-size: 36px; /* Doubled font size for "Your one-stop shop..." */
+            font-size: 24px; /* Adjusted font size for mobile */
             margin-top: 20px;
         }
 
@@ -120,9 +122,9 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            margin: 40px auto; /* Center the carousel */
+            margin: 20px auto; /* Reduced margin for mobile */
             overflow: hidden;
-            height: 500px; /* Increased height for better display */
+            height: 300px; /* Adjusted height for mobile */
         }
 
         .carousel-images {
@@ -141,25 +143,24 @@
         #shop, #about, #contact {
             background: grey;
             color: white; /* Section text color white */
-            max-width: 800px;
-            margin: 40px auto; /* Center sections with margin */
+            max-width: 100%;
+            margin: 20px auto; /* Reduced margin for mobile */
             border-radius: 10px; /* Optional: Add some border-radius for better look */
             padding: 20px;
-            font-size: 24px; /* Increased font size by 50% */
+            font-size: 20px; /* Adjusted font size for mobile */
         }
 
         .products {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             gap: 20px;
             margin-top: 20px;
         }
 
         .product {
             border: 1px solid #ccc;
-            padding: 20px;
-            width: calc(33.333% - 40px);
+            padding: 10px;
+            width: 100%; /* Full width for mobile */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
             color: black;
@@ -176,8 +177,8 @@
         }
 
         .product:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         form {
@@ -187,7 +188,7 @@
         }
 
         form input, form textarea {
-            width: 80%;
+            width: 90%;
             margin: 10px 0;
             padding: 10px;
             border: 1px solid #ccc;
@@ -211,38 +212,91 @@
             padding: 20px;
             background: black;
             color: white;
-            margin-top: 40px;
+            margin-top: 20px; /* Reduced margin for mobile */
         }
 
         .footer-info {
             margin-top: 20px;
-            font-size: 14px;
+            font-size: 12px; /* Adjusted font size for mobile */
         }
 
         .additional-info {
-            font-size: 16px;
+            font-size: 14px; /* Adjusted font size for mobile */
             margin-top: 10px;
             line-height: 1.5;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .product {
-                width: calc(50% - 40px);
+                width: calc(33.333% - 40px);
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .search-bar input[type="text"] {
-                width: 150px;
+            .search-bar {
+                margin-top: 10px;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .search-bar input[type="text"], .search-bar button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .product {
+                width: calc(50% - 20px); /* Two products per row */
+            }
+
+            #home h1 {
+                font-size: 36px;
+            }
+
+            #home p {
+                font-size: 20px;
+            }
+
+            #home .location-carousel {
+                height: 250px; /* Adjusted height for mobile */
+            }
+
+            #shop, #about, #contact {
+                font-size: 18px; /* Adjusted font size for mobile */
+                padding: 10px;
+            }
+
+            .footer-info {
+                font-size: 10px; /* Smaller font size for mobile */
+            }
+
+            .additional-info {
+                font-size: 12px; /* Smaller font size for mobile */
             }
         }
 
         @media (max-width: 480px) {
             .product {
-                width: calc(100% - 40px);
+                width: 100%; /* Full width for small screens */
             }
 
-            .search-bar input[type="text"] {
-                width: 120px;
+            #home h1 {
+                font-size: 28px;
+            }
+
+            #home p {
+                font-size: 18px;
+            }
+
+            .search-bar input[type="text"], .search-bar button {
+                width: 100%;
+                margin: 5px 0;
             }
         }
     </style>
@@ -273,12 +327,12 @@
             <p>Your one-stop shop for fashion reselling.</p>
             <div class="location-carousel">
                 <div class="carousel-images">
-                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 1">
-                    <img src="https://cdn.abcotvs.com/dip/images/14627205_040624-wabc-NJ-sneaker-store-robbery-img.jpg?w=1600" alt="Location Image 2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYvm1rJdPZ5L9-bdFTOdmkNPQjVYpLyAEQ&s" alt="Location Image 3">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlAwyTJYmqGoefiCdvZbpD3Usn2XTAtIlWA&s" alt="Location Image 4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0WIClnpKyQ6WdtneXgj8Dn5pZTMOt-1lBw&s" alt="Location Image 5">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6UzpyeKs0AupVTCW_oFhkZyg0J4-v6lGMg&s" alt="Location Image 6">
+                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image">
+                    <img src="https://cdn.abcotvs.com/dip/images/14627205_040624-wabc-NJ-sneaker-store-robbery-img.jpg?w=1600" alt="Location Image 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYvm1rJdPZ5L9-bdFTOdmkNPQjVYpLyAEQ&s" alt="Location Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlAwyTJYmqGoefiCdvZbpD3Usn2XTAtIlWA&s" alt="Location Image 3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0WIClnpKyQ6WdtneXgj8Dn5pZTMOt-1lBw&s" alt="Location Image 4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6UzpyeKs0AupVTCW_oFhkZyg0J4-v6lGMg&s" alt="Location Image 5">
                 </div>
             </div>
         </section>
@@ -361,7 +415,7 @@
             carouselImages.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        setInterval(showNextImage, 5000); // Change image every 5 seconds
+        setInterval(showNextImage, 4000); // Change image every 4 seconds
     </script>
 </body>
 </html>
