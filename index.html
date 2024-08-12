@@ -116,13 +116,24 @@
             margin-top: 20px;
         }
 
-        #home img {
+        #home .location-carousel {
+            position: relative;
             width: 100%;
-            max-width: 800px; /* Maximum width of the image */
-            height: auto;
-            margin: 40px auto; /* Center the image */
+            max-width: 800px;
+            margin: 40px auto; /* Center the carousel */
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 400px; /* Adjusted height for consistency */
+            object-fit: cover;
             display: block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
         }
 
         #shop, #about, #contact {
@@ -165,25 +176,6 @@
         .product:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .location-carousel {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 40px auto; /* Center the carousel */
-            overflow: hidden;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-images img {
-            width: 100%;
-            height: auto;
-            display: block;
         }
 
         form {
@@ -280,8 +272,11 @@
             <div class="location-carousel">
                 <div class="carousel-images">
                     <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 1">
-                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 2">
-                    <!-- Add more images if needed -->
+                    <img src="https://cdn.abcotvs.com/dip/images/14627205_040624-wabc-NJ-sneaker-store-robbery-img.jpg?w=1600" alt="Location Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYvm1rJdPZ5L9-bdFTOdmkNPQjVYpLyAEQ&s" alt="Location Image 3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlAwyTJYmqGoefiCdvZbpD3Usn2XTAtIlWA&s" alt="Location Image 4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0WIClnpKyQ6WdtneXgj8Dn5pZTMOt-1lBw&s" alt="Location Image 5">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6UzpyeKs0AupVTCW_oFhkZyg0J4-v6lGMg&s" alt="Location Image 6">
                 </div>
             </div>
         </section>
