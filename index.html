@@ -29,7 +29,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 80px; /* Increased header height */
+            height: 160px; /* Increased header height for larger logo */
         }
 
         .logo {
@@ -39,6 +39,7 @@
         .nav-links {
             display: flex;
             gap: 20px;
+            align-items: center; /* Center align nav items vertically */
         }
 
         .nav-links a, .nav-links button {
@@ -56,7 +57,7 @@
         }
 
         .section {
-            padding: 100px 20px 60px; /* Adjusted for header */
+            padding: 180px 20px 60px; /* Adjusted for taller header */
             text-align: center;
             max-width: 1200px;
             margin: auto;
@@ -66,11 +67,20 @@
             color: white;
         }
 
+        #home h1 {
+            font-size: 64px; /* Doubled font size for "Welcome to The Loop" */
+        }
+
+        #home p {
+            font-size: 36px; /* Doubled font size for "Your one-stop shop..." */
+            margin-top: 20px;
+        }
+
         #shop, #about, #contact {
             background: grey;
             color: white; /* Section text color white */
             max-width: 800px;
-            margin: 0 auto 40px; /* Center sections with margin */
+            margin: 40px auto; /* Center sections with margin */
             border-radius: 10px; /* Optional: Add some border-radius for better look */
             padding: 20px;
         }
@@ -133,6 +143,14 @@
             background: orange;
         }
 
+        .location-image {
+            width: 100%;
+            max-width: 800px; /* Adjust as needed */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -143,14 +161,6 @@
         .footer-info {
             margin-top: 20px;
             font-size: 14px;
-        }
-
-        .location-image {
-            width: 100%;
-            max-width: 800px; /* Adjust as needed */
-            height: auto;
-            margin: 20px auto;
-            display: block;
         }
     </style>
 </head>
@@ -171,6 +181,7 @@
     <section id="home" class="section">
         <h1>Welcome to The Loop</h1>
         <p>Your one-stop shop for fashion reselling.</p>
+        <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image" class="location-image">
     </section>
 
     <section id="shop" class="section">
@@ -224,13 +235,11 @@
         </form>
     </section>
 
-    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image" class="location-image">
-
     <footer>
         <p>&copy; 2024 The Loop. All rights reserved.</p>
         <div class="footer-info">
             <p>Sneakers • Streetwear • Designer</p>
-            <p> Buy • Sell • Trade</p>
+            <p>Buy • Sell • Trade</p>
             <p>WE BUY DAILY!</p>
             <p>Tue-Sat: 12-7PM</p>
             <p>Sun & Mon: 12-5PM</p>
