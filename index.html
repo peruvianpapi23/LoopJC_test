@@ -14,37 +14,37 @@
 
         body {
             font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            background: linear-gradient(to right, black, blue, orange); /* Horizontal gradient background */
-            background-attachment: fixed; /* Ensure the background stays fixed while scrolling */
+            overflow-x: hidden;
+            background: linear-gradient(to right, black, blue, orange);
+            background-attachment: fixed;
         }
 
         html {
-            scroll-behavior: smooth; /* Smooth scrolling */
-            scroll-snap-type: y mandatory; /* Enable snap scrolling */
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
         }
 
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px 20px; /* Adjusted padding */
-            background: black; /* Header background color black */
+            padding: 10px 20px;
+            background: black;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: auto; /* Adjusted for responsive design */
+            height: auto;
         }
 
         .logo {
-            height: 80px; /* Reduced logo height */
+            height: 80px;
         }
 
         .nav-links {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center align nav items vertically */
+            align-items: center;
             gap: 10px;
             margin-top: 10px;
         }
@@ -61,7 +61,7 @@
 
         .nav-links a:hover, .nav-links button:hover {
             color: orange;
-            text-decoration: underline; /* Added underline on hover */
+            text-decoration: underline;
         }
 
         .search-bar {
@@ -95,11 +95,11 @@
         }
 
         .search-bar button:hover {
-            background: darkorange; /* Darker orange for hover effect */
+            background: darkorange;
         }
 
         .section {
-            padding: 120px 20px 60px; /* Adjusted for mobile */
+            padding: 120px 20px 60px;
             text-align: center;
             max-width: 1200px;
             margin: auto;
@@ -110,11 +110,11 @@
         }
 
         #home h1 {
-            font-size: 48px; /* Adjusted font size for mobile */
+            font-size: 48px;
         }
 
         #home p {
-            font-size: 24px; /* Adjusted font size for mobile */
+            font-size: 24px;
             margin-top: 20px;
         }
 
@@ -122,9 +122,9 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            margin: 20px auto; /* Reduced margin for mobile */
+            margin: 20px auto;
             overflow: hidden;
-            height: 300px; /* Adjusted height for mobile */
+            height: 400px; /* Adjusted height */
         }
 
         .carousel-images {
@@ -142,25 +142,26 @@
 
         #shop, #about, #contact {
             background: grey;
-            color: white; /* Section text color white */
+            color: white;
             max-width: 100%;
-            margin: 20px auto; /* Reduced margin for mobile */
-            border-radius: 10px; /* Optional: Add some border-radius for better look */
+            margin: 20px auto;
+            border-radius: 10px;
             padding: 20px;
-            font-size: 20px; /* Adjusted font size for mobile */
+            font-size: 20px;
         }
 
         .products {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
             margin-top: 20px;
         }
 
         .product {
             border: 1px solid #ccc;
             padding: 10px;
-            width: 100%; /* Full width for mobile */
+            width: 300px; /* Fixed width */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
             color: black;
@@ -212,25 +213,23 @@
             padding: 20px;
             background: black;
             color: white;
-            margin-top: 20px; /* Reduced margin for mobile */
+            margin-top: 20px;
         }
 
         .footer-info {
             margin-top: 20px;
-            font-size: 12px; /* Adjusted font size for mobile */
+            font-size: 12px;
         }
 
         .additional-info {
-            font-size: 14px; /* Adjusted font size for mobile */
+            font-size: 14px;
             margin-top: 10px;
             line-height: 1.5;
         }
 
-        /* Responsive adjustments */
         @media (min-width: 768px) {
             .product {
                 width: calc(33.333% - 40px);
-                display: inline-block;
             }
         }
 
@@ -252,7 +251,7 @@
             }
 
             .product {
-                width: calc(50% - 20px); /* Two products per row */
+                width: calc(50% - 20px);
             }
 
             #home h1 {
@@ -264,26 +263,26 @@
             }
 
             #home .location-carousel {
-                height: 250px; /* Adjusted height for mobile */
+                height: 300px;
             }
 
             #shop, #about, #contact {
-                font-size: 18px; /* Adjusted font size for mobile */
+                font-size: 18px;
                 padding: 10px;
             }
 
             .footer-info {
-                font-size: 10px; /* Smaller font size for mobile */
+                font-size: 10px;
             }
 
             .additional-info {
-                font-size: 12px; /* Smaller font size for mobile */
+                font-size: 12px;
             }
         }
 
         @media (max-width: 480px) {
             .product {
-                width: 100%; /* Full width for small screens */
+                width: 100%;
             }
 
             #home h1 {
@@ -415,7 +414,7 @@
             carouselImages.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        setInterval(showNextImage, 4000); // Change image every 4 seconds
+        setInterval(showNextImage, 5000); // Change image every 5 seconds
     </script>
 </body>
 </html>
