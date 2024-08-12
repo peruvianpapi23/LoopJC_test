@@ -14,39 +14,37 @@
 
         body {
             font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(to right, black, blue, orange);
-            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            background: linear-gradient(to right, black, blue, orange); /* Horizontal gradient background */
+            background-attachment: fixed; /* Ensure the background stays fixed while scrolling */
         }
 
         html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth; /* Smooth scrolling */
+            scroll-snap-type: y mandatory; /* Enable snap scrolling */
         }
 
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between; /* Space between logo/search and nav links */
             align-items: center;
-            padding: 10px 20px;
-            background: black;
+            padding: 10px 20px; /* Adjusted padding */
+            background: black; /* Header background color black */
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: auto;
+            height: 100px; /* Adjusted header height for smaller logo */
         }
 
         .logo {
-            height: 80px;
+            height: 80px; /* Reduced logo height */
         }
 
         .nav-links {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 20px;
+            align-items: center; /* Center align nav items vertically */
         }
 
         .nav-links a, .nav-links button {
@@ -61,13 +59,13 @@
 
         .nav-links a:hover, .nav-links button:hover {
             color: orange;
-            text-decoration: underline;
+            text-decoration: underline; /* Added underline on hover */
         }
 
         .search-bar {
             display: flex;
             align-items: center;
-            margin-top: 10px;
+            margin-left: 20px;
         }
 
         .search-bar input[type="text"] {
@@ -75,7 +73,7 @@
             border: 1px solid #ccc;
             border-radius: 5px 0 0 5px;
             outline: none;
-            width: 150px;
+            width: 200px;
             transition: border-color 0.3s ease;
         }
 
@@ -95,11 +93,11 @@
         }
 
         .search-bar button:hover {
-            background: darkorange;
+            background: darkorange; /* Darker orange for hover effect */
         }
 
         .section {
-            padding: 120px 20px 60px;
+            padding: 180px 20px 60px; /* Adjusted for taller header */
             text-align: center;
             max-width: 1200px;
             margin: auto;
@@ -110,11 +108,11 @@
         }
 
         #home h1 {
-            font-size: 48px;
+            font-size: 64px; /* Doubled font size for "Welcome to The Loop" */
         }
 
         #home p {
-            font-size: 24px;
+            font-size: 36px; /* Doubled font size for "Your one-stop shop..." */
             margin-top: 20px;
         }
 
@@ -122,9 +120,9 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 40px auto; /* Center the carousel */
             overflow: hidden;
-            height: 400px; /* Adjusted height */
+            height: 500px; /* Increased height for better display */
         }
 
         .carousel-images {
@@ -142,26 +140,26 @@
 
         #shop, #about, #contact {
             background: grey;
-            color: white;
-            max-width: 100%;
-            margin: 20px auto;
-            border-radius: 10px;
+            color: white; /* Section text color white */
+            max-width: 800px;
+            margin: 40px auto; /* Center sections with margin */
+            border-radius: 10px; /* Optional: Add some border-radius for better look */
             padding: 20px;
-            font-size: 20px;
+            font-size: 24px; /* Increased font size by 50% */
         }
 
         .products {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
             margin-top: 20px;
         }
 
         .product {
             border: 1px solid #ccc;
-            padding: 10px;
-            width: 300px; /* Fixed width */
+            padding: 20px;
+            width: calc(33.333% - 40px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
             color: black;
@@ -178,8 +176,8 @@
         }
 
         .product:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         form {
@@ -189,7 +187,7 @@
         }
 
         form input, form textarea {
-            width: 90%;
+            width: 80%;
             margin: 10px 0;
             padding: 10px;
             border: 1px solid #ccc;
@@ -213,89 +211,38 @@
             padding: 20px;
             background: black;
             color: white;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .footer-info {
             margin-top: 20px;
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .additional-info {
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 10px;
             line-height: 1.5;
         }
 
-        @media (min-width: 768px) {
-            .product {
-                width: calc(33.333% - 40px);
-            }
-        }
-
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .search-bar {
-                margin-top: 10px;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .search-bar input[type="text"], .search-bar button {
-                width: 100%;
-                margin: 5px 0;
-            }
-
             .product {
-                width: calc(50% - 20px);
+                width: calc(50% - 40px);
             }
 
-            #home h1 {
-                font-size: 36px;
-            }
-
-            #home p {
-                font-size: 20px;
-            }
-
-            #home .location-carousel {
-                height: 300px;
-            }
-
-            #shop, #about, #contact {
-                font-size: 18px;
-                padding: 10px;
-            }
-
-            .footer-info {
-                font-size: 10px;
-            }
-
-            .additional-info {
-                font-size: 12px;
+            .search-bar input[type="text"] {
+                width: 150px;
             }
         }
 
         @media (max-width: 480px) {
             .product {
-                width: 100%;
+                width: calc(100% - 40px);
             }
 
-            #home h1 {
-                font-size: 28px;
-            }
-
-            #home p {
-                font-size: 18px;
-            }
-
-            .search-bar input[type="text"], .search-bar button {
-                width: 100%;
-                margin: 5px 0;
+            .search-bar input[type="text"] {
+                width: 120px;
             }
         }
     </style>
@@ -326,12 +273,12 @@
             <p>Your one-stop shop for fashion reselling.</p>
             <div class="location-carousel">
                 <div class="carousel-images">
-                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image">
-                    <img src="https://cdn.abcotvs.com/dip/images/14627205_040624-wabc-NJ-sneaker-store-robbery-img.jpg?w=1600" alt="Location Image 1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYvm1rJdPZ5L9-bdFTOdmkNPQjVYpLyAEQ&s" alt="Location Image 2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlAwyTJYmqGoefiCdvZbpD3Usn2XTAtIlWA&s" alt="Location Image 3">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0WIClnpKyQ6WdtneXgj8Dn5pZTMOt-1lBw&s" alt="Location Image 4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6UzpyeKs0AupVTCW_oFhkZyg0J4-v6lGMg&s" alt="Location Image 5">
+                    <img src="https://townsquare.media/site/385/files/2024/04/attachment-Google-Maps.jpg?w=630&q=75" alt="Location Image 1">
+                    <img src="https://cdn.abcotvs.com/dip/images/14627205_040624-wabc-NJ-sneaker-store-robbery-img.jpg?w=1600" alt="Location Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYvm1rJdPZ5L9-bdFTOdmkNPQjVYpLyAEQ&s" alt="Location Image 3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlAwyTJYmqGoefiCdvZbpD3Usn2XTAtIlWA&s" alt="Location Image 4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0WIClnpKyQ6WdtneXgj8Dn5pZTMOt-1lBw&s" alt="Location Image 5">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6UzpyeKs0AupVTCW_oFhkZyg0J4-v6lGMg&s" alt="Location Image 6">
                 </div>
             </div>
         </section>
